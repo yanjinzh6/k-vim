@@ -204,12 +204,12 @@ set autoindent
 
 " tab相关变更
 " 设置Tab键的宽度        [等同的空格个数]
-set tabstop=4
+set tabstop=2
 " 每一次缩进对应的空格数
-set shiftwidth=4
-" 按退格键时可以一次删掉 4 个空格
-set softtabstop=4
-" insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
+set shiftwidth=2
+" 按退格键时可以一次删掉 2 个空格
+set softtabstop=2
+" insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 2 个空格
 set smarttab
 " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set expandtab
@@ -239,6 +239,12 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
+
+" 改变超过 80 个字符之后的区域，这样就可以起到提示作用
+set colorcolumn=81
+set textwidth=80
+set fo+=mB
+set wrap
 
 "==========================================
 " FileEncode Settings 文件编码,格式
